@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Analyze">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Analyze"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="118dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 로고 등을 담은 레이아웃 -->
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="#000000"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="173dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/pre_but2"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8.5dp"
+                    android:src="@drawable/button" />
+
+                <ImageButton
+                    android:id="@+id/next_but2"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/button2" />
+
+                <TextView
+                    android:id="@+id/monthYear2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/tmonmonsori"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/black"
+                    android:textSize="10dp"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+            <!-- 최근 한 달간의 식사 칼로리 총량 -->
+            <LinearLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="359dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="최근 한 달간의 식사 칼로리 총량"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <!-- 상단 레이아웃의 내용 추가 -->
+                <!-- 예: 텍스트뷰, 차트 등 -->
+
+                <!-- RecyclerView 추가 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+            </LinearLayout>
+
+            <!-- 최근 1달 간의 식사 비용을 종류별로 분석 -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:context=".MainActivity">
+
+                <LinearLayout
+                    android:id="@+id/bottomLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/tmonmonsori"
+                        android:text="최근 1달 간의 식사 비용 분석"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <!-- 하단 레이아웃의 내용 추가 -->
+                    <!-- 예: 조식, 중식, 석식, 음료 등에 대한 분석 내용 -->
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
